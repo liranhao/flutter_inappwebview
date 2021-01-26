@@ -57,7 +57,7 @@ public class InAppWebViewOptions: Options {
     var isPagingEnabled = false
     var maximumZoomScale = 1.0
     var minimumZoomScale = 1.0
-    
+    var allowUniversalAccessFromFileURLs = false;
     override init(){
         super.init()
     }

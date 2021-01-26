@@ -661,6 +661,9 @@ class IOSInAppWebViewOptions
   ///The default value is `1.0`.
   double minimumZoomScale;
 
+  ///Set to true to support cross-domain. The default value is `false`.
+  bool allowUniversalAccessFromFileURLs;
+
   IOSInAppWebViewOptions(
       {this.disallowOverScroll = false,
       this.enableViewportScale = false,
@@ -683,7 +686,8 @@ class IOSInAppWebViewOptions
       this.scrollsToTop = true,
       this.isPagingEnabled = false,
       this.maximumZoomScale = 1.0,
-      this.minimumZoomScale = 1.0});
+      this.minimumZoomScale = 1.0,
+      this.allowUniversalAccessFromFileURLs = false});
 
   @override
   Map<String, dynamic> toMap() {
@@ -716,7 +720,8 @@ class IOSInAppWebViewOptions
       "scrollsToTop": scrollsToTop,
       "isPagingEnabled": isPagingEnabled,
       "maximumZoomScale": maximumZoomScale,
-      "minimumZoomScale": minimumZoomScale
+      "minimumZoomScale": minimumZoomScale,
+      "allowUniversalAccessFromFileURLs": allowUniversalAccessFromFileURLs,
     };
   }
 
@@ -759,6 +764,8 @@ class IOSInAppWebViewOptions
     options.isPagingEnabled = map["isPagingEnabled"];
     options.maximumZoomScale = map["maximumZoomScale"];
     options.minimumZoomScale = map["minimumZoomScale"];
+    options.allowUniversalAccessFromFileURLs =
+        map["allowUniversalAccessFromFileURLs"];
     return options;
   }
 }

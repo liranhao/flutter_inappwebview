@@ -1058,6 +1058,7 @@ public class InAppWebView: WKWebView, UIScrollViewDelegate, WKUIDelegate, WKNavi
         
         if #available(iOS 10.0, *) {
             configuration.mediaTypesRequiringUserActionForPlayback = ((options?.mediaPlaybackRequiresUserGesture)!) ? .all : []
+            configuration.setValue(options?.allowUniversalAccessFromFileURLs, forKey: "allowUniversalAccessFromFileURLs")
         } else {
             // Fallback on earlier versions
             configuration.mediaPlaybackRequiresUserAction = (options?.mediaPlaybackRequiresUserGesture)!
