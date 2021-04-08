@@ -1709,6 +1709,11 @@ final public class InAppWebView extends InputAwareWebView {
     if (contextMenuOptions.hideDefaultSystemContextMenuItems == null || !contextMenuOptions.hideDefaultSystemContextMenuItems) {
       for (int i = 0; i < actionMenu.size(); i++) {
         final MenuItem menuItem = actionMenu.getItem(i);
+        //edit here start
+        if (menuItem.getIntent() != null) {
+          continue;
+        }
+        //edit here start end
         final int itemId = menuItem.getItemId();
         final String itemTitle = menuItem.getTitle().toString();
         TextView text = (TextView) LayoutInflater.from(this.getContext())
