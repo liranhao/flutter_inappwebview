@@ -66,6 +66,7 @@ public class InAppBrowserActivity extends AppCompatActivity implements MethodCha
     }
 
     Bundle b = getIntent().getExtras();
+    assert b != null;
     uuid = b.getString("uuid");
     windowId = b.getInt("windowId");
 
