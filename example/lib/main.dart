@@ -6,6 +6,7 @@ import 'package:flutter_inappwebview_example/chrome_safari_browser_example.scree
 import 'package:flutter_inappwebview_example/headless_in_app_webview.screen.dart';
 import 'package:flutter_inappwebview_example/in_app_webiew_example.screen.dart';
 import 'package:flutter_inappwebview_example/in_app_browser_example.screen.dart';
+import 'package:flutter_inappwebview_example/test_webview_page.dart';
 // import 'package:permission_handler/permission_handler.dart';
 
 // InAppLocalhostServer localhostServer = new InAppLocalhostServer();
@@ -53,6 +54,12 @@ Drawer myDrawer({@required BuildContext context}) {
             Navigator.pushReplacementNamed(context, '/HeadlessInAppWebView');
           },
         ),
+        ListTile(
+          title: Text('TestWebviewPage'),
+          onTap: () {
+            Navigator.pushReplacementNamed(context, '/testWebview');
+          },
+        ),
       ],
     ),
   );
@@ -84,6 +91,7 @@ class _MyAppState extends State<MyApp> {
           '/InAppBrowser': (context) => InAppBrowserExampleScreen(),
           '/ChromeSafariBrowser': (context) => ChromeSafariBrowserExampleScreen(),
           '/HeadlessInAppWebView': (context) => HeadlessInAppWebViewExampleScreen(),
+          '/testWebview': (context) => MailWebViewPage(),
         }
     );
   }
